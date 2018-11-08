@@ -30,7 +30,9 @@ func addRes(x, y int) (r int, err string) {
 	return // returning the named param r and err
 }
 
-// variable declaration
+const myPi = 3.14
+
+// VAriable declaration
 var x int           // outside func we need to use alway var in front
 var y, z int = 0, 1 // variable declaration with initializer
 
@@ -41,4 +43,5 @@ func main() {
 	fmt.Println("variablesssss  ", x, y, z, k)
 	// type conversion T(v) - convert v to type T
 	fmt.Println("type conversion ", float64(x))
+	fmt.Println("just susing a constant here: ", myPi)
 }
