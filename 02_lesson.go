@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"math"
+	"runtime"
 )
 
 // if with statement
@@ -32,6 +33,35 @@ func mySqrt(x float64) float64 {
 	return z
 }
 
+func switcF() {
+	fmt.Println("Running on...")
+	switch os := runtime.GOOS; os {
+	case "darwin":
+		fmt.Println("OS X")
+	case "linux":
+		fmt.Println("Linux")
+	default:
+		// any other os...
+		fmt.Println("%s", os)
+	}
+}
+
+func defer01() {
+	defer fmt.Println("Stefano")
+
+	fmt.Printf("Hello, ")
+}
+
+func defer02() {
+	// counting reverse
+	fmt.Println("counting defer....")
+	defer fmt.Println("done")
+	for i := 0; i < 10; i++ {
+		defer fmt.Println(i)
+	}
+	// defer are pushed in a stack (LIFO)
+}
+
 func lesson02() {
 	firstLoop(10)
 	fmt.Println(
@@ -43,4 +73,7 @@ func lesson02() {
 		fmt.Println("r= ", mySqrt(float64(e)))
 		fmt.Println("sqrt = ", math.Sqrt(float64(e)))
 	}
+	switcF()
+	defer01()
+	defer02()
 }
