@@ -39,5 +39,8 @@ func lesson02() {
 		myPow(3, 2, 10),
 		myPow(3, 3, 20),
 	)
-	mySqrt(10)
+	a := []int{1, 9, 23, 49, 144}
+	for _, e := range a {
+		mySqrt(float64(e))
+	}
 }
