@@ -28,7 +28,6 @@ func mySqrt(x float64) float64 {
 	z := float64(1)
 	for i := 0; i < 10; i++ {
 		z -= (z*z - x) / (2 * z)
-		fmt.Println("z= ", z)
 	}
 	return z
 }
@@ -41,6 +40,7 @@ func lesson02() {
 	)
 	a := []int{1, 9, 23, 49, 144}
 	for _, e := range a {
-		mySqrt(float64(e))
+		fmt.Println("r= ", mySqrt(float64(e)))
+		fmt.Println("sqrt = ", math.Sqrt(float64(e)))
 	}
 }
