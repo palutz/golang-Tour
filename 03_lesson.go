@@ -32,6 +32,11 @@ func (mf MyFloat) Abs() float64 {
 	return float64(mf)
 }
 
+func (v *Vertex) Scale (f float64) {
+	v.X = v.X * f
+	v.Y = v.Y * f
+}
+
 func lesson03() {
 	v := Vertex { 3, 4 }
 	fmt.Println("abs ", v.Abs())
